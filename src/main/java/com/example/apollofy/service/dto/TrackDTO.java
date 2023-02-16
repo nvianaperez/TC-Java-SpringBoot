@@ -15,8 +15,6 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 public class TrackDTO implements Serializable {
-    //@JsonIgnore
-    @JsonProperty(access=JsonProperty.Access.WRITE_ONLY)
     private Long id;
     private String name;
     private String description;
@@ -28,7 +26,8 @@ public class TrackDTO implements Serializable {
     private LocalDate releasedDate;
 
 
-    public TrackDTO(String name, String description) {
+    public TrackDTO(Long id, String name, String description) {
+        this.id = id;
         this.name = name;
         this.description = description;
     }

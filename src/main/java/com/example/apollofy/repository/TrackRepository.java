@@ -25,7 +25,7 @@ public interface TrackRepository extends JpaRepository<Track,Long> {
     """)
 */
     @Query("""
-        SELECT new com.example.apollofy.service.dto.TrackDTO(t.name,t.description)  FROM Track t 
+        SELECT new com.example.apollofy.service.dto.TrackDTO(t.id, t.name,t.description)  FROM Track t 
         WHERE UPPER(t.name) LIKE UPPER(CONCAT('%', :q, '%')) OR 
         UPPER(t.description) LIKE UPPER(CONCAT('%', :q, '%'))         
     """)

@@ -12,13 +12,13 @@ import java.io.Serializable;
 @Data
 
 public class UserDTO implements Serializable {
-    @JsonProperty(access=JsonProperty.Access.WRITE_ONLY)
     private Long id;
     private String firstName;
     private String lastName;
     private String email;
 
-    public UserDTO(String firstName, String lastName, String email) {
+    public UserDTO(Long id, String firstName, String lastName, String email) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

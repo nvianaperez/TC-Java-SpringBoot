@@ -9,7 +9,6 @@ import lombok.Data;
 import java.util.List;
 @Data
 public class PlaylistDTO {
-    @JsonProperty(access=JsonProperty.Access.WRITE_ONLY)
     private Long id;
     @NotNull private String name;
     private String description;
@@ -25,7 +24,8 @@ public class PlaylistDTO {
         this.isPublic = isPublic;
     }
 
-    public PlaylistDTO(String name, String description) {
+    public PlaylistDTO(Long id, String name, String description) {
+        this.id = id;
         this.name = name;
         this.description = description;
     }

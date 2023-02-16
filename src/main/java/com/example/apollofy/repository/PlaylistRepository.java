@@ -15,7 +15,7 @@ public interface PlaylistRepository extends JpaRepository<Playlist, Long> {
     Optional<Playlist> findPlaylistByNameIgnoreCase(String name);
 
     @Query("""
-            SELECT new com.example.apollofy.service.dto.PlaylistDTO(p.name,p.description) FROM Playlist p
+            SELECT new com.example.apollofy.service.dto.PlaylistDTO(p.id, p.name,p.description) FROM Playlist p
             WHERE UPPER(p.name) LIKE UPPER(CONCAT('%', :q, '%')) OR 
             UPPER(p.description) LIKE UPPER(CONCAT('%', :q, '%')) AND 
             p.isPublic=true

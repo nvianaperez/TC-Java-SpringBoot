@@ -13,7 +13,7 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User,Long> {
 
     @Query("""
-        SELECT new com.example.apollofy.service.dto.UserDTO(u.firstName,u.lastName,u.email) FROM User u 
+        SELECT new com.example.apollofy.service.dto.UserDTO(u.id, u.firstName,u.lastName,u.email) FROM User u 
         WHERE UPPER(u.firstName) LIKE UPPER(CONCAT('%', :q, '%')) OR 
         UPPER(u.lastName) LIKE UPPER(CONCAT('%', :q, '%')) OR 
         UPPER(u.email) LIKE UPPER(CONCAT('%', :q, '%'))
