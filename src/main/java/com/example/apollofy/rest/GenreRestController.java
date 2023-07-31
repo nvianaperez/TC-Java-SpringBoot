@@ -34,10 +34,10 @@ public class GenreRestController {
         return ResponseEntity.ok(genres);
     }
 
-    //ToDo: revisar que un findall nunca debe devolver un NOT FOUND
+//    ToDo: revisar que un findall nunca debe devolver un NOT FOUND
 
     //POST /api/genres
-    @PostMapping
+    @PostMapping()
     public Genre createOneGenre(@RequestBody GenreDTO genreDto) {
         return genreService.createOneGenre(genreDto);
     }

@@ -14,6 +14,9 @@ public class PlaylistDTO {
     private String description;
     //boolean (tipo primitivo) --> valor por defecto es false. Entonces cuando creas el objeto el valor por defecto será false.
     //por esto es importante poner Boolean clase
+
+    //librería Jackson convierte de Objeto Java a JSON --> se llama proceso de serialización, ya que todos los JSON están serializados (se sabae cuándo epiezan y cuándo acaban con los {}), mientras que un objeto Java son diferentes direcciones de memoria relacionadas con punteros
+    //@JsonIgnore
     @JsonProperty(access=JsonProperty.Access.WRITE_ONLY)
     private Boolean isPublic;
 
